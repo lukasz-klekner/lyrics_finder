@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Spinner from '../layout/Spinner'
+import Moment from 'react-moment'
 
 const Lyrics = () => {
   const { id } = useParams()
@@ -69,7 +70,8 @@ const Lyrics = () => {
             {track.explicit === 0 ? 'No' : 'Yes'}
           </li>
           <li className='list-group-item'>
-            <strong>Updating Date</strong>: {track.updated_time}
+            <strong>Updating Date</strong>:{' '}
+            <Moment format='DD/MM/YYYY'>{track.updated_time}</Moment>
           </li>
         </ul>
       </>
